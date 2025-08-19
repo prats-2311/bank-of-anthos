@@ -36,11 +36,25 @@ If you are using Bank of Anthos, please ★Star this repository to show your int
 | [accounts-db](/src/accounts/accounts-db)               | PostgreSQL    | Database for user accounts and associated data. Option to pre-populate with demo users.                                                      |
 | [loadgenerator](/src/loadgenerator)                    | Python/Locust | Continuously sends requests imitating users to the frontend. Periodically creates new accounts and simulates transactions between them.      |
 
-## Interactive quickstart (GKE)
+## 🚀 Installation
 
-The following button opens up an interactive tutorial showing how to deploy Bank of Anthos in GKE:
+For comprehensive installation instructions covering all deployment options, see **[INSTALL.md](INSTALL.md)**.
 
+### Quick Start Options
+
+**📖 Interactive Tutorial:**
 [![Open in Cloud Shell](https://gstatic.com/cloudssh/images/open-btn.svg)](https://ssh.cloud.google.com/cloudshell/editor?show=ide&cloudshell_git_repo=https://github.com/GoogleCloudPlatform/bank-of-anthos&cloudshell_workspace=.&cloudshell_tutorial=extras/cloudshell/tutorial.md)
+
+**⚡ One-Command GKE Deployment:**
+```bash
+curl -sSL https://raw.githubusercontent.com/prats-2311/bank-of-anthos/main/scripts/quickstart-gke.sh | bash
+```
+
+**🔧 Local Development:**
+```bash
+git clone https://github.com/GoogleCloudPlatform/bank-of-anthos
+cd bank-of-anthos && skaffold dev
+```
 
 ## Quickstart (GKE)
 
@@ -133,6 +147,7 @@ The following button opens up an interactive tutorial showing how to deploy Bank
 
 <!-- This section is duplicated in the docs/ README: https://github.com/GoogleCloudPlatform/bank-of-anthos/blob/main/docs/README.md -->
 
+- **[Installation Guide](/INSTALL.md)** - Comprehensive installation instructions for all deployment methods
 - [Development](/docs/development.md) to learn how to run and develop this app locally.
 - [Environments](/docs/environments.md) to learn how to deploy on non-GKE clusters.
 - [Workload Identity](/docs/workload-identity.md) to learn how to set-up Workload Identity.
