@@ -12,10 +12,28 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-.-PHONY: cluster deploy deploy-continuous logs checkstyle check-env
+.-PHONY: cluster deploy deploy-continuous logs checkstyle check-env quickstart dev-setup install-help
 
 CLUSTER=bank-of-anthos
 E2E_PATH=${PWD}/.github/workflows/ui-tests/
+
+quickstart:
+	@echo "🏦 Running Bank of Anthos quickstart..."
+	@./scripts/quickstart-gke.sh
+
+dev-setup:
+	@echo "🔧 Setting up local development environment..."
+	@./scripts/dev-setup.sh
+
+install-help:
+	@echo "📚 Bank of Anthos Installation Options:"
+	@echo ""
+	@echo "  make quickstart    - Quick GKE deployment with interactive script"
+	@echo "  make dev-setup     - Set up local development environment" 
+	@echo "  make cluster       - Create GKE cluster (requires PROJECT_ID, ZONE)"
+	@echo "  make deploy        - Deploy to existing cluster (requires PROJECT_ID, ZONE)"
+	@echo ""
+	@echo "📖 For comprehensive installation instructions, see: INSTALL.md"
 
 cluster: check-env
 	gcloud container clusters create ${CLUSTER} \
